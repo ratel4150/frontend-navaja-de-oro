@@ -1,3 +1,4 @@
+// src\components\molecules\HeroText.tsx
 import { Typography, Box, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';

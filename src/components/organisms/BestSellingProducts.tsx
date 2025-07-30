@@ -1,7 +1,8 @@
 // src\components\organisms\BestSellingProducts.tsx
+'use client'
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import ProductCard from '../molecules/ProductCard';
-import FancyGoldButton from '../atoms/FancyGoldButton';
+
 import Slider from 'react-slick';
 import { css, Global } from '@emotion/react';
 
@@ -48,7 +49,7 @@ const sliderSettings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 4000,
+  autoplaySpeed: 2000,
   responsive: [
     {
       breakpoint: 1200,

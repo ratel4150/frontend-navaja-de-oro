@@ -21,7 +21,7 @@ const videos = [
   { src: 'herramientas6.mp4', height: 400 },
 ];
 
-const VideoPaper = styled(Paper)(({ theme }) => ({
+const VideoPaper = styled(Paper)(() => ({
   borderRadius: 8,
   overflow: 'hidden',
   boxShadow: '0 0 15px rgba(0,0,0,0.7)',
@@ -74,20 +74,22 @@ export default function Hero() {
           <Slider {...mobileSliderSettings}>
             {filteredVideos.map(({ src }, i) => (
               <Box key={i} sx={{ height: '100dvh' }}>
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    filter: 'brightness(0.3)',
-                  }}
-                >
-                  <source src={`/sections/hero/${src}`} type="video/mp4" />
-                </video>
+             <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto" // ✅ asegura precarga inmediata
+  style={{
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    filter: 'brightness(0.3)',
+  }}
+>
+  <source src={`/sections/hero/${src}`} type="video/mp4" />
+</video>
+
               </Box>
             ))}
           </Slider>

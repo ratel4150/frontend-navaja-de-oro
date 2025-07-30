@@ -1,18 +1,33 @@
 // src\components\templates\LandingTemplate.tsx
 'use client';
-import React from 'react'
-import Hero from '../organisms/Hero'
-import OurService from '../organisms/OurService'
+import React from 'react';
+import { Box } from '@mui/material';
+
+import Hero from '../organisms/Hero';
+import OurService from '../organisms/OurService';
 import BestSellingProducts from '../organisms/BestSellingProducts';
 
 function LandingTemplate() {
+  
+
+
   return (
-    <>
-    <Hero/>
-    <OurService/>
-    <BestSellingProducts/>
-    </>
-  )
+    <Box
+      sx={{
+        bgcolor: '#000000ff', // fondo oscuro base
+        color: '#F5F5F5',    // texto claro
+        minHeight: '100vh',
+        overflow:"hidden"
+      
+      }}
+    >
+   
+        <Hero />
+        <OurService />
+        <BestSellingProducts />
+  
+    </Box>
+  );
 }
 
-export default LandingTemplate
+export default LandingTemplate;

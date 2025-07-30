@@ -10,8 +10,8 @@ import {
   Divider,
 } from '@mui/material';
 import { FiHeart } from 'react-icons/fi';
-import { BsStarFill } from 'react-icons/bs';
-import { MdOutlineInventory2, MdLocalOffer } from 'react-icons/md';
+
+import { MdOutlineInventory2 } from 'react-icons/md';
 import { GiWeight } from 'react-icons/gi';
 
 interface ProductCardProps {
