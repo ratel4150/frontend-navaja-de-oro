@@ -1,42 +1,66 @@
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
 
 const HeroText = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box
       sx={{
         position: 'relative',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: isMobile ? 'column' : 'row',
         alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
         mb: 4,
         px: { xs: 2, md: 0 },
-        minHeight: { xs: 'auto', md: '220px' },
+        gap: 2,
       }}
     >
+      {/* Imagen arriba en mobile, flotante en desktop */}
+      <Box
+        component="img"
+        src="/sections/hero/navaja_de_oro.png"
+        alt="Navaja de Oro"
+        sx={{
+          width: { xs: '280px', md: '320px' },
+          mb: { xs: 2, md: 0 },
+          position: isMobile ? 'absolute' : 'absolute',
+          top: isMobile ? '-150%' : '50%',
+          left: isMobile ? 'auto' : '100%',
+          transform: isMobile ? 'none' : 'translate(-50%, -50%)',
+          zIndex: 2,
+          pointerEvents: 'none',
+          userSelect: 'none',
+          opacity: 0.9,
+          filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.7))',
+        }}
+      />
+
       {/* Texto principal */}
       <Box
         sx={{
           zIndex: 1,
-          textAlign: 'center',
           maxWidth: { xs: '100%', md: '600px' },
           color: '#fff',
         }}
       >
-       <Typography
-    variant="h1"
-    component="h1"
-    sx={{
-      fontWeight: '900',
-      fontSize: { xs: '2.5rem', md: '5rem' },
-      textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
-      lineHeight: 1.1,
-      fontStyle: 'italic',
-      maxWidth: '900px',
-    }}
-  >
-    Bienvenido a <br /> Navaja de Oro
-  </Typography>
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{
+            fontWeight: '900',
+            fontSize: { xs: '2.5rem', md: '5rem' },
+            textShadow: '2px 2px 8px rgba(0,0,0,0.7)',
+            lineHeight: 1.1,
+            fontStyle: 'italic',
+          }}
+        >
+          Bienvenido a <br /> Navaja de Oro
+        </Typography>
 
         <Typography
           variant="h5"
@@ -72,25 +96,6 @@ const HeroText = () => {
           Donde el estilo es tradición
         </Typography>
       </Box>
-
-      {/* Imagen sobrepuesta en centro */}
-      <Box
-        component="img"
-        src="/sections/hero/navaja_de_oro.png"
-        alt="Navaja de Oro"
-        sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '100%',
-          width: { xs: '150px', md: '320px' },
-          transform: 'translate(-50%, -50%)',
-          zIndex: 2,
-          pointerEvents: 'none',
-          userSelect: 'none',
-          opacity: 0.85,
-          filter: 'drop-shadow(0 0 10px rgba(255, 215, 0, 0.7))',
-        }}
-      />
     </Box>
   );
 };

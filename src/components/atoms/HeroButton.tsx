@@ -1,16 +1,21 @@
-// src\components\atoms\HeroButton.tsx
-// src/components/atoms/CustomButton.tsx
-import { Button, ButtonProps } from '@mui/material';
+// src/components/atoms/HeroButton.tsx
+'use client';
+import { Button, ButtonProps, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import React from 'react';
 
 const CustomButton = ({ children, ...props }: ButtonProps) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
-  <Button
+    <Button
       {...props}
       variant="contained"
       sx={{
-        px: 4,
-        py: 1.5,
+        px: isMobile ? 3 : 4,
+        py: isMobile ? 1.2 : 1.5,
+        fontSize: isMobile ? '0.875rem' : '1rem',
         borderRadius: '999px',
         background: 'linear-gradient(45deg, #FFD700, #FF8C00)',
         color: '#000',
@@ -19,6 +24,7 @@ const CustomButton = ({ children, ...props }: ButtonProps) => {
         textTransform: 'none',
         backdropFilter: 'blur(6px)',
         transition: 'all 0.3s ease',
+        minWidth: isMobile ? '200px' : '240px',
         '&:hover': {
           transform: 'scale(1.05)',
           background: 'linear-gradient(45deg, #FF8C00, #FFD700)',
