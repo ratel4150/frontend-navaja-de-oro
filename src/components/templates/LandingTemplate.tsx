@@ -6,6 +6,7 @@ import { Box } from '@mui/material';
 import Hero from '../organisms/Hero';
 import OurService from '../organisms/OurService';
 import BestSellingProducts from '../organisms/BestSellingProducts';
+import ViralSocialProof from '../organisms/ViralSocialProof';
 
 function LandingTemplate() {
   
@@ -25,6 +26,7 @@ function LandingTemplate() {
         <Hero />
         <OurService />
         <BestSellingProducts />
+        <ViralSocialProof/>
   
     </Box>
   );

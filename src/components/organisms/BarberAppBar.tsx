@@ -54,7 +54,7 @@ const BarberAppBar = () => {
   const cartCount = mockCartItems.length;
 
   const toggleDrawer = () => setDrawerOpen(!drawerOpen);
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+ /*  const toggleDarkMode = () => setDarkMode(!darkMode); */
 
   const handleCartClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
