@@ -48,7 +48,7 @@ const BarberAppBar = () => {
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, /* setDarkMode */] = useState(true);
   const [scrolled, setScrolled] = useState(false);
 
   const cartCount = mockCartItems.length;

@@ -7,6 +7,7 @@ import Hero from '../organisms/Hero';
 import OurService from '../organisms/OurService';
 import BestSellingProducts from '../organisms/BestSellingProducts';
 import ViralSocialProof from '../organisms/ViralSocialProof';
+import BeforeAfter from '../organisms/BeforeAfter';
 
 function LandingTemplate() {
   
@@ -27,6 +28,7 @@ function LandingTemplate() {
         <OurService />
         <BestSellingProducts />
         <ViralSocialProof/>
+        <BeforeAfter/>
   
     </Box>
   );
