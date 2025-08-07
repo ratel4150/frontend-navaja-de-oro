@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import '@/assets/css/normalize.css'
 import BarberAppBar from "@/components/organisms/BarberAppBar";
+// src/app/layout.tsx o cualquier layout global
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 const geistSans = Geist({
